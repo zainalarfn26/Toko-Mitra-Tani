@@ -1,66 +1,215 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 Toko Mitra Tani - Sistem Kasir (POS System)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-10.x-red?style=for-the-badge&logo=laravel" alt="Laravel">
+  <img src="https://img.shields.io/badge/PHP-8.1+-blue?style=for-the-badge&logo=php" alt="PHP">
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-purple?style=for-the-badge&logo=bootstrap" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/MySQL-Database-orange?style=for-the-badge&logo=mysql" alt="MySQL">
 </p>
 
-## About Laravel
+Sistem Point of Sale (POS) modern untuk Toko Mitra Tani yang dibangun dengan Laravel 10. Aplikasi ini dirancang khusus untuk memudahkan pengelolaan transaksi penjualan, manajemen produk, dan pelaporan dengan antarmuka yang bersih dan responsif.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 👨‍💼 Dashboard Admin
+- **Manajemen Pengguna**: Kelola user dengan role Admin dan Kasir
+- **Manajemen Produk**: CRUD lengkap untuk produk dengan tracking stok
+- **Laporan Transaksi**: View dan export laporan penjualan dengan filter tanggal
+- **Dashboard Analytics**: Statistik penjualan dan overview bisnis
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 💰 Dashboard Kasir
+- **Transaksi Real-time**: Sistem keranjang belanja berbasis AJAX
+- **Pencarian Produk**: Search cepat berdasarkan nama atau kode produk
+- **Validasi Pembayaran**: Validasi otomatis untuk pembayaran kurang/lebih
+- **Cetak Struk**: Generate dan print struk transaksi
+- **Manajemen Stok**: Auto-update stok setelah transaksi
 
-## Learning Laravel
+### 🎨 User Interface
+- Design modern dengan Argon Dashboard template
+- Fully responsive untuk semua ukuran layar
+- Icon Font Awesome 6.5.0
+- Toast notification untuk feedback user
+- Gradient theme dengan warna hijau sebagai primary color
+- Custom favicon dan branding
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Teknologi yang Digunakan
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend**: Laravel 10.x
+- **Frontend**: Bootstrap 5.3.3, Blade Templates
+- **Database**: MySQL
+- **JavaScript**: Vanilla JS dengan Fetch API
+- **Icons**: Font Awesome 6.5.0
+- **Authentication**: Laravel Breeze
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Requirements
 
-## Laravel Sponsors
+- PHP >= 8.1
+- Composer
+- MySQL >= 5.7
+- Node.js & NPM (untuk asset compilation)
+- Web Server (Apache/Nginx)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🔧 Instalasi
 
-### Premium Partners
+### 1. Clone Repository
+```bash
+git clone https://github.com/zainalarfn26/Toko-Mitra-Tani.git
+cd Toko-Mitra-Tani
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Setup Environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Konfigurasi Database
+Edit file `.env` dan sesuaikan dengan database Anda:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=toko_mitra_tani
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+### 5. Migrasi Database & Seeder
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Compile Assets
+```bash
+npm run build
+# atau untuk development
+npm run dev
+```
 
-## Security Vulnerabilities
+### 7. Jalankan Aplikasi
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Aplikasi akan berjalan di `http://localhost:8000`
 
-## License
+## 👤 Default Login Credentials
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Admin
+- **Email**: admin@mitratani.com
+- **Password**: password
+
+### Kasir
+- **Email**: kasir@mitratani.com
+- **Password**: password
+
+## 📁 Struktur Database
+
+### Users
+- `id`, `name`, `email`, `password`, `role` (admin/kasir)
+- Timestamps: `created_at`, `updated_at`
+
+### Products
+- `id`, `kode_product`, `name`, `price`, `stock`, `description`
+- Timestamps: `created_at`, `updated_at`
+
+### Transactions
+- `id`, `transaction_code`, `user_id`, `total_amount`, `paid_amount`, `change_amount`
+- Timestamps: `created_at`, `updated_at`
+
+### Detail Transactions
+- `id`, `transaction_id`, `product_id`, `quantity`, `price`, `subtotal`
+- Timestamps: `created_at`, `updated_at`
+
+## 🎯 Fitur Keamanan
+
+- ✅ Authentication dengan Laravel Breeze
+- ✅ Role-based Access Control (Admin & Kasir)
+- ✅ CSRF Protection pada semua form
+- ✅ Password hashing dengan bcrypt
+- ✅ Middleware untuk proteksi route
+- ✅ Input validation di backend dan frontend
+
+## 📱 Screenshots
+
+### Dashboard Kasir
+Sistem transaksi real-time dengan keranjang belanja dinamis dan validasi pembayaran otomatis.
+
+### Dashboard Admin  
+Manajemen lengkap untuk produk, user, dan laporan penjualan dengan UI yang intuitif.
+
+## 🛠️ Development
+
+### Run Development Server
+```bash
+php artisan serve
+npm run dev
+```
+
+### Clear Cache
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+```
+
+### Generate New Migration
+```bash
+php artisan make:migration create_table_name
+```
+
+## 📝 Route List
+
+### Guest Routes
+- `/` - Landing page (redirect ke login)
+- `/login` - Halaman login
+
+### Admin Routes (Middleware: auth, role:admin)
+- `/admin/dashboard` - Dashboard admin
+- `/admin/users` - Manajemen user
+- `/admin/produk` - Manajemen produk
+- `/admin/laporan` - Laporan transaksi
+
+### Kasir Routes (Middleware: auth, role:kasir)
+- `/kasir/dashboard` - Dashboard kasir
+- `/kasir/transaksi` - Halaman transaksi POS
+
+## 🤝 Contributing
+
+Kontribusi sangat welcome! Silakan fork repository ini dan submit pull request untuk perbaikan atau fitur baru.
+
+1. Fork repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## 📄 License
+
+Project ini adalah open-source dan tersedia di bawah [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Zainal Arifin**
+- GitHub: [@zainalarfn26](https://github.com/zainalarfn26)
+- Repository: [Toko-Mitra-Tani](https://github.com/zainalarfn26/Toko-Mitra-Tani)
+
+## 🙏 Acknowledgments
+
+- Laravel Framework
+- Argon Dashboard Template
+- Bootstrap 5
+- Font Awesome Icons
+- Semua kontributor open-source
+
+---
+
+<p align="center">Made with ❤️ for Toko Mitra Tani</p>
+
